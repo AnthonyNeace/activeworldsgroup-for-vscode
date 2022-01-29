@@ -1,0 +1,36 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ActiveWorlds Group",
+	"patterns": [
+		{
+			"include": "#expression"
+		}
+	],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{ "include": "#positions" },
+				{ "include": "#object-names" },
+				{ "include": "#action-commands" },
+				{ "include": "#action-commands-without-object-type" }			
+			]
+		},
+		"positions": {
+			"name": "constant.numeric.awg",
+			"match": "[0-9]+"
+		},
+		"object-names": {
+			"name": "keyword.objectnames.awg",
+			"match": "((?<=\\s)[^\\s]*(.rwx|.cob|.scn|.x))"
+		},
+		"action-commands": {
+			"name": "string.actioncommands.awg",
+			"match": "(?<=(.rwx|.cob|.scn|.x))(create|bump|activate).*"
+		},
+		"action-commands-without-object-type": {
+			"name": "string.actioncommands.awg",
+			"match": "(?<=\\w)(create|bump|activate).*"
+		}
+	},
+	"scopeName": "source.activeworlds.group"
+}

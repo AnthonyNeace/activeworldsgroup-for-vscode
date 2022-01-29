@@ -1,0 +1,37 @@
+{
+    "name": "awg-for-vscode",
+    "displayName": "ActiveWorlds Group (awg) for VSCode",
+    "description": "Language support for Active Worlds Group Objects (.awg)",
+    "version": "1.0.0",
+    "publisher": "AnthonyNeace",
+    "homepage": "https://github.com/AnthonyNeace/activeworldsgroup-for-vscode/",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+		"awg",
+		"activeworlds",
+		"active-worlds",
+		"active worlds"
+	],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AnthonyNeace/activeworldsgroup-for-vscode.git"
+    },
+    "contributes": {
+        "languages": [{
+            "id": "awg",
+            "aliases": ["ActiveWorlds Group", "awg"],
+            "extensions": [".awg"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "awg",
+            "scopeName": "source.activeworlds.group",
+            "path": "./syntaxes/awg.tmLanguage.json"
+        }]
+    }
+}
