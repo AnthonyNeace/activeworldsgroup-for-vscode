@@ -12,7 +12,7 @@
 				{ "include": "#positions" },
 				{ "include": "#object-names" },
 				{ "include": "#action-commands" },
-				{ "include": "#action-commands-without-object-type" }			
+				{ "include": "#description" }
 			]
 		},
 		"positions": {
@@ -25,11 +25,11 @@
 		},
 		"action-commands": {
 			"name": "string.actioncommands.awg",
-			"match": "(?<=(.rwx|.cob|.scn|.x))(create|bump|activate).*"
+			"match": "(?<!\\s)(create|bump|activate).**"
 		},
-		"action-commands-without-object-type": {
-			"name": "string.actioncommands.awg",
-			"match": "(?<=\\w)(create|bump|activate).*"
+		"description": {
+			"name": "comment.description.awg",
+			"match": "(?<=.rwx|.cob|.scn|.x).*?(?=create|bump|activate)"
 		}
 	},
 	"scopeName": "source.activeworlds.group"

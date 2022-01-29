@@ -2,7 +2,7 @@
     "name": "awg-for-vscode",
     "displayName": "ActiveWorlds Group (awg) for VSCode",
     "description": "Language support for Active Worlds Group Objects (.awg)",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "AnthonyNeace",
     "homepage": "https://github.com/AnthonyNeace/activeworldsgroup-for-vscode/",
     "engines": {
