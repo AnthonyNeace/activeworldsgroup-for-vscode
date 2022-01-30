@@ -9,18 +9,33 @@
 	"repository": {
 		"expression": {
 			"patterns": [
-				{ "include": "#positions" },
+				{ "include": "#propdump-tokens" },
 				{ "include": "#object-names" },
 				{ "include": "#action-commands" },
 				{ "include": "#description" }
 			]
 		},
-		"positions": {
-			"name": "constant.numeric.awg",
-			"match": "[0-9]+"
+		"propdump-tokens": {
+			"match": "([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)([^\\s]*[0-9]+\\s?)",
+			"name": "propdump-tokens",
+			"captures": {
+				"1": { "name": "constant.numeric.citizennumber" },
+				"2": { "name": "markup.bold.timestamp" },
+				"3": { "name": "variable.parameter.position.x" },
+				"4": { "name": "variable.parameter.position.y" },
+				"5": { "name": "variable.parameter.position.z" },
+				"6": { "name": "variable.parameter.orientation.yaw" },
+				"7": { "name": "variable.parameter.orientation.tilt" },
+				"8": { "name": "variable.parameter.orientation.roll" },
+				"9": { "name": "constant.numeric.objecttype" },
+				"10": { "name": "invalid.length.modelname" },
+				"11": { "name": "invalid.length.description" },
+				"12": { "name": "invalid.length.action" },
+				"13": { "name": "invalid.length.objectdata" }
+			}
 		},
 		"object-names": {
-			"name": "keyword.objectnames.awg",
+			"name": "entity.name.type.awg",
 			"match": "((?<=\\s)[^\\s]*(.rwx|.cob|.scn|.x))"
 		},
 		"action-commands": {
